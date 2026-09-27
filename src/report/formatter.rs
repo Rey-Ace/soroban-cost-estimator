@@ -361,6 +361,7 @@ mod tests {
                 total_xlm: "0.0015427".to_string(),
             },
             ledger: 3_894_195,
+            ledger_age: None,
             network: "testnet".to_string(),
             rpc_latency_ms: 87,
             rates: None,
@@ -388,6 +389,7 @@ mod tests {
                 total_xlm: "0.0000000".to_string(),
             },
             ledger: 0,
+            ledger_age: None,
             network: "mainnet".to_string(),
             rpc_latency_ms: 0,
             rates: None,
@@ -535,7 +537,7 @@ mod tests {
         let first_line = output.lines().next().unwrap();
         assert!(first_line.starts_with("function,"));
         let field_count = first_line.split(',').count();
-        assert_eq!(field_count, 16);
+        assert_eq!(field_count, 17);
     }
 
     #[test]
